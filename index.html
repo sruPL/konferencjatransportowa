@@ -965,6 +965,24 @@
             });
         });
     </script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const scrollTarget = localStorage.getItem("scrollTarget");
+		  if (scrollTarget) {
+		    const el = document.getElementById(scrollTarget);
+		    if (el) {
+		      setTimeout(() => {
+		        el.scrollIntoView({ behavior: "smooth" });
+		      }, 300);
+		    }
+		    localStorage.removeItem("scrollTarget");
+		  }
+		});
+	</script>
+
+	
 </body>
 
 </html>
+
