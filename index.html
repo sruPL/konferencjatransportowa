@@ -301,6 +301,16 @@
             gap: 25px;
             margin-top: 30px;
         }
+
+        /* Patrons section override to a 2x2 grid on larger screens */
+        @media (min-width: 769px) {
+            #patrons .organizers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
         
         .organizer-card {
             background: white;
@@ -622,6 +632,7 @@
                 <ul id="navMenu">
                     <li><a href="#about"><i class="fas fa-info-circle"></i> O Konferencji</a></li>
                     <li><a href="#program"><i class="fas fa-calendar-alt"></i> Program</a></li>
+                    <li><a href="#patrons"><i class="fas fa-shield-alt"></i> Patroni</a></li>
                     <li><a href="#organizers"><i class="fas fa-users"></i> Organizatorzy</a></li>
 					<li><a href="wnioski"><i class="fas fa-file-alt"></i> Wnioski</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
@@ -862,7 +873,15 @@
 							display:flex;align-items:center;justify-content:center;background:transparent;">
 					<img src="Ministerstwo_Infrastruktury.jpg" alt="Ministerstwo Infrastruktury"
 					 style="display:block;width:auto;height:80%;max-width:80%;max-height:80%;object-fit:contain;border-radius:0;">
-				</div>
+                    </div>
+                </div>
+                
+                <div class="organizer-card">
+                    <div class="organizer-logo" style="font-size: 2rem; color: var(--gray); border: 2px dashed var(--gray); background: #f8f9fa;">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Wkrótce...</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -957,6 +976,7 @@
                     <ul class="footer-links">
                         <li><a href="#about">O Konferencji</a></li>
                         <li><a href="#program">Program</a></li>
+                        <li><a href="#patrons">Patroni</a></li>
                         <li><a href="#organizers">Organizatorzy</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
