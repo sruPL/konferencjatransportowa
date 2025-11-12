@@ -304,7 +304,8 @@
 
         /* Patrons section override to a 2x2 grid on larger screens */
         @media (min-width: 769px) {
-            #patrons .organizers-grid {
+            #patrons .organizers-grid,
+            #media-patrons .organizers-grid { /* Apply to media patrons as well */
                 grid-template-columns: repeat(2, 1fr);
                 max-width: 800px;
                 margin-left: auto;
@@ -337,6 +338,43 @@
             justify-content: center;
             color: var(--primary);
             font-size: 2rem;
+        }
+
+        /* Specific logo styling for media patrons */
+        .media-logo-container {
+            width: 100%; /* Make container take full width */
+            max-width: 330px; /* Max width like others */
+            height: 180px; /* Fixed height */
+            border-radius: 0; /* Override default */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            margin: 0 auto 20px; /* Center and add bottom margin */
+        }
+
+        .media-logo-container img {
+            display: block;
+            width: auto; /* Let image scale naturally */
+            height: 80%; /* Control image height */
+            max-width: 100%; /* Don't exceed container */
+            max-height: 100%; /* Don't exceed container */
+            object-fit: contain; /* Fit without distortion */
+            border-radius: 0;
+        }
+
+        /* Placeholder styles */
+        .placeholder-logo {
+            width: 100%;
+            height: 100%;
+            border: 2px dashed var(--gray);
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-style: italic;
         }
         
         .organizer-card h3 {
@@ -613,6 +651,10 @@
         #about.section { 
             padding: 30px 0; 
         }
+        /* Smaller padding for media patrons section */
+        #media-patrons.section {
+            padding: 30px 0;
+        }
     </style>
 </head>
 <body>
@@ -633,6 +675,7 @@
                     <li><a href="#about"><i class="fas fa-info-circle"></i> O Konferencji</a></li>
                     <li><a href="#program"><i class="fas fa-calendar-alt"></i> Program</a></li>
                     <li><a href="#patrons"><i class="fas fa-shield-alt"></i> Patroni</a></li>
+                    <li><a href="#media-patrons"><i class="fas fa-camera"></i> Patroni Medialni</a></li>
                     <li><a href="#organizers"><i class="fas fa-users"></i> Organizatorzy</a></li>
                     <li><a href="wnioski"><i class="fas fa-file-alt"></i> Wnioski</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
@@ -709,7 +752,7 @@
                         <i class="fas fa-microphone"></i>
                     </div>
                     <h3>Forma Konferencji</h3>
-                    <p>Konferencja odbędzie się stacjonarnie na Uniwersytecie Pomorskim w Słupsku.</p>
+                    <p>Konferencja odbędzie się stacjonarie na Uniwersytecie Pomorskim w Słupsku.</p>
                 </div>
             </div>
         </div>
@@ -905,6 +948,37 @@
         </div>
     </section>
 
+    <!-- Media Patrons Section -->
+    <section class="section" id="media-patrons">
+        <div class="container">
+            <div class="section-title">
+                <h2>Patroni Medialni</h2>
+            </div>   
+            
+            <div class="organizers-grid">
+                <!-- Kurier Kolejowy -->
+                <div class="organizer-card">
+                    <div class="media-logo-container">
+                        <img src="Logo Kurier Kolejowy.png" alt="Kurier Kolejowy">
+                    </div>
+                    <h3>Kurier Kolejowy</h3>
+                </div>
+                
+                <!-- Placeholder -->
+                <div class="organizer-card"> 
+                    <div class="media-logo-container">
+                        <div class="placeholder-logo" style="flex-direction: column; font-style: normal; padding: 20px;">
+                            <i class="fas fa-hourglass-half" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                            <span style="font-size: 1.1rem; font-weight: 600;">Do ogłoszenia</span>
+                        </div>
+                    </div>
+                    <h3>Już wkrótce...</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Organizers Section -->
     <section class="section" id="organizers">
         <div class="container">
@@ -996,6 +1070,7 @@
                         <li><a href="#about">O Konferencji</a></li>
                         <li><a href="#program">Program</a></li>
                         <li><a href="#patrons">Patroni</a></li>
+                        <li><a href="#media-patrons">Patroni Medialni</a></li> <!-- Dodany link -->
                         <li><a href="#organizers">Organizatorzy</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
@@ -1027,10 +1102,21 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const header = document.querySelector('header');
+                    const headerOffset = header ? header.offsetHeight : 0;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 15; // Dodatkowy margines 15px
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
                 
                 // Close mobile menu if open
                 if (document.getElementById('navMenu').classList.contains('show')) {
