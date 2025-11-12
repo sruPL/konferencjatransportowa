@@ -302,28 +302,13 @@
             margin-top: 30px;
         }
 
-        /* Patrons section override to a 3+2 flex layout on larger screens */
+        /* Patrons section override to a 2x2 grid on larger screens */
         @media (min-width: 769px) {
             #patrons .organizers-grid {
-                /* Overriding display: grid */
-                display: flex; 
-                flex-wrap: wrap;
-                justify-content: center;
-                
-                /* Overriding grid-template-columns */
-                grid-template-columns: none; 
-                
-                /* Keep container properties */
-                max-width: 1200px;
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
                 margin-left: auto;
                 margin-right: auto;
-            }
-
-            /* Need to size the cards inside this flex container */
-            #patrons .organizers-grid .organizer-card {
-                flex-basis: 350px; /* Base width */
-                flex-grow: 1;      /* Allow to grow to fill space */
-                max-width: 370px;  /* Limit max width to force 3 columns */
             }
         }
         
@@ -631,6 +616,7 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -655,6 +641,7 @@
         </div>
     </header>
 
+<!-- Hero Section -->
 <section class="hero" 
     style="
         background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
@@ -690,6 +677,7 @@
     </div>
 </section>
 
+    <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="section-title">
@@ -727,7 +715,8 @@
         </div>
     </section>
 
-    <section class="section program-section" id="program">
+    <!-- Program Section -->
+<section class="section program-section" id="program">
     <div class="container">
         <div class="section-title">
             <h2>Program Konferencji</h2>
@@ -735,6 +724,7 @@
 
         <div class="schedule">
 
+            <!-- Otwarcie konferencji -->
             <div class="schedule-item">
                 <div class="time">09:00</div>
                 <div class="event-details">
@@ -755,6 +745,7 @@
                 </div>
             </div>
 
+            <!-- Panel 1 -->
             <div class="schedule-item">
                 <div class="time">10:00 - 11:20</div>
                 <div class="event-details">
@@ -769,6 +760,7 @@
                 </div>
             </div>
 
+            <!-- Przerwa kawowa -->
             <div class="schedule-item">
                 <div class="time">11:30 - 11:50</div>
                 <div class="event-details">
@@ -776,6 +768,7 @@
                 </div>
             </div>
 
+            <!-- Panel 2 -->
             <div class="schedule-item">
                 <div class="time">12:00 - 13:30</div>
                 <div class="event-details">
@@ -806,6 +799,7 @@
                 </div>
             </div>
 
+            <!-- Panel 3 -->
             <div class="schedule-item">
                 <div class="time">13:30 - 14:40</div>
                 <div class="event-details">
@@ -824,6 +818,7 @@
                 </div>
             </div>
 
+            <!-- Zakończenie konferencji -->
             <div class="schedule-item">
                 <div class="time">14:45</div>
                 <div class="event-details">
@@ -831,6 +826,7 @@
                 </div>
             </div>
 
+            <!-- Lunch -->
             <div class="schedule-item">
                 <div class="time">15:00 - 15:30</div>
                 <div class="event-details">
@@ -838,6 +834,7 @@
                 </div>
             </div>
 
+            <!-- Koncert / Wystąpienie -->
             <div class="schedule-item">
                 <div class="time">15:30</div>
                 <div class="event-details">
@@ -845,6 +842,7 @@
                 </div>
             </div>
 
+            <!-- Gala -->
             <div class="schedule-item">
                 <div class="time">16:00</div>
                 <div class="event-details">
@@ -858,7 +856,8 @@
 </section>
 
 
-<section class="section" id="patrons">
+<!-- Patrons Section -->
+    <section class="section" id="patrons">
         <div class="container">
             <div class="section-title">
                 <h2>Patroni</h2>
@@ -902,20 +901,11 @@
                     </div>
                     <h3>Rektor Uniwersytetu Pomorskiego</h3>
                 </div>
-
-                <div class="organizer-card">
-                    <div class="organizer-logo"
-                     style="width:330px;height:180px;border-radius:50%;overflow:hidden;
-                            display:flex;align-items:center;justify-content:center;background:transparent;">
-                    <img src="Logo Kurier Kolejowy.png" alt="Kurier Kolejowy"
-                     style="display:block;width:auto;height:80%;max-width:80%;max-height:80%;object-fit:contain;border-radius:0;">
-                    </div>
-                    <h3>Kurier Kolejowy</h3>
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- Organizers Section -->
     <section class="section" id="organizers">
         <div class="container">
             <div class="section-title">
@@ -948,6 +938,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="section contact-section" id="contact">
         <div class="container">
             <div class="section-title">
@@ -990,6 +981,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1020,7 +1012,7 @@
             </div>
             
             <div class="copyright">
-                <p>© 2025 Słupskie Dni Techniki, Transportu i Logistyki. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2025 Słupskie Dni Techniki, Transportu i Logistyki. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
@@ -1063,5 +1055,7 @@
         });
     </script>
 
+
 </body>
+
 </html>
