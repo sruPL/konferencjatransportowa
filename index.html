@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Słupskie Dni Techniki, Transportu i Logistyki 2025</title>
+    <title>Słupskie Dni Techniki, Transportu i Logistyki 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚂</text></svg>">
     <style>
@@ -656,6 +656,25 @@
         #media-patrons.section {
             padding: 30px 0;
         }
+
+        /* Tymczasowe ukrycie elementów pozostających w kodzie */
+        .temporarily-hidden { display: none !important; }
+
+        /* Hero conferences side-by-side layout */
+        .hero-conferences {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            align-items: start;
+            margin-bottom: 1.1rem;
+        }
+        .hero-conference { min-width: 0; }
+        @media (max-width: 900px) {
+            .hero-conferences {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -664,7 +683,7 @@
         <div class="header-container">
             <div class="logo">
                 <i class="fas fa-train fa-2x" style="color: var(--primary);"></i>
-                <div class="logo-text">SDTTiL <span>2025</span></div>
+                <div class="logo-text">SDTTiL <span>2026</span></div>
             </div>
             
             <button class="mobile-menu-btn">
@@ -675,8 +694,8 @@
                 <ul id="navMenu">
                     <li><a href="#about"><i class="fas fa-info-circle"></i> O Konferencji</a></li>
                     <li><a href="#program"><i class="fas fa-calendar-alt"></i> Program</a></li>
-                    <li><a href="#patrons"><i class="fas fa-shield-alt"></i> Patroni</a></li>
-                    <li><a href="#media-patrons"><i class="fas fa-camera"></i> Patroni Medialni</a></li>
+                    <li class="temporarily-hidden"><a href="#patrons"><i class="fas fa-shield-alt"></i> Patroni</a></li>
+                    <li class="temporarily-hidden"><a href="#media-patrons"><i class="fas fa-camera"></i> Patroni Medialni</a></li>
                     <li><a href="#organizers"><i class="fas fa-users"></i> Organizatorzy</a></li>
                     <li><a href="wnioski"><i class="fas fa-file-alt"></i> Wnioski</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
@@ -703,200 +722,107 @@
             position: relative;
             z-index: 1;
             padding: 28px;
-            max-width: 680px;
+            max-width: 1000px;
+            width: 92%;
             border-radius: 8px;
             text-align: center;
             background: rgba(0,0,0,0.75);
         ">
-        <h1 style="font-size: 2.8rem; margin-bottom: 0.6rem; line-height: 1.3; color: white;">
-            Słupskie Dni Techniki,<br>Transportu i Logistyki
-        </h1>
-        <p style="font-size: 1.4rem; margin-bottom: 1.1rem; color: white; line-height: 1.4;">
-            Inwestycje i rozwój systemu<br>transportowego Pomorza
-        </p>
-        <div class="hero-dates" style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.1rem; color: white;">
-            <i class="fas fa-calendar-alt"></i> 25 listopada 2025 | Aula Uniwersytecka, Słupsk
+        <div class="hero-conferences">
+            <div class="hero-conference">
+                <h1 style="font-size: 2.55rem; margin-bottom: 0.6rem; line-height: 1.3; color: white;">
+                    Słupskie Dni Techniki,<br>Transportu i Logistyki
+                </h1>
+                <p style="font-size: 1.35rem; margin-bottom: 0; color: white; line-height: 1.4;">
+                    Zarządzanie procesami logistycznymi<br>wobec współczesnych wyzwań
+                </p>
+            </div>
+            <div class="hero-conference">
+                <h1 style="font-size: 2.55rem; margin-bottom: 0.6rem; line-height: 1.3; color: white;">
+                    Forum Bezpieczeństwa<br>i Zdrowia Pracujących
+                </h1>
+                <p style="font-size: 1.35rem; margin-bottom: 0; color: white; line-height: 1.4;">
+                    Zarządzanie ryzykiem zawodowym w logistyce
+                </p>
+            </div>
         </div>
-        <a href="https://forms.gle/BDYKaacbjnpbUKzE9" target="_blank" rel="noopener noreferrer" class="btn">Zapisz się na konferencję</a>
+        <div class="hero-dates" style="font-size: 1.15rem; display: flex; width: fit-content; align-items: center; gap: 8px; margin: 0 auto 1.1rem auto; color: white;">
+            <i class="fas fa-calendar-alt"></i> 5-6 listopada 2026 | Uniwersytet Pomorski w Słupsku
+        </div>
+        <div>
+            <a href="https://forms.gle/BDYKaacbjnpbUKzE9" target="_blank" rel="noopener noreferrer" class="btn">Zapisz się na konferencje</a>
+        </div>
     </div>
 </section>
-
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>O Konferencji</h2>
-            </div>
-            
+            <div class="section-title"><h2>O Konferencji</h2></div>            
             <div class="info-cards">
                 <div class="info-card">
-                    <div class="icon-container">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Cel Konferencji</h3>
-                    <p>Prezentacja realizowanych i planowanych inwestycji w infrastrukturę transportową regionu Słupska oraz wskazanie roli inwestycji jako narzędzia pobudzania rozwoju społeczno-gospodarczego.</p>
-                </div>
-                
+                    <div class="icon-container"><i class="fas fa-bullseye"></i></div>
+                    <h3>Tematy Konferencji</h3>
+                    <p>Tematem <strong>Słupskich Dni Techniki, Transportu i Logistyki</strong> będzie „Zarządzanie procesami logistycznymi wobec współczesnych wyzwań”.</p>
+                    <p>Równocześnie odbędzie się <strong>Forum Bezpieczeństwa i Zdrowia Pracujących</strong>, którego tematem będzie „Zarządzanie ryzykiem zawodowym w logistyce – droga do »zero wypadków« w magazynie i transporcie”.</p>
+                </div>                
                 <div class="info-card">
-                    <div class="icon-container">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
+                    <div class="icon-container"><i class="fas fa-calendar-check"></i></div>
                     <h3>Termin i Miejsce</h3>
-                    <p><strong>25 listopada 2025</strong><br>
-                    Konferencja: "Inwestycje i rozwój systemu transportowego Pomorza"</p>
+					<p style="font-size: 0.96rem;">
+						<strong>5 listopada 2026</strong>
+						<br> Słupskie Dni Techniki, Transportu i Logistyki<br>Forum Bezpieczeństwa i Zdrowia Pracujących</p>
                     <p><strong>Aula Uniwersytecka</strong><br>
                     ul. Kozietulskiego 7, Słupsk</p>
-                </div>
-                
+                    <p><strong>6 listopada 2026</strong><br>
+                    Infrastruktura DUAL USE w praktyce - wizyta studyjna w Porcie Ustka</p>
+                </div>                
                 <div class="info-card">
-                    <div class="icon-container">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <h3>Forma Konferencji</h3>
-                    <p>Konferencja odbędzie się stacjonarie na Uniwersytecie Pomorskim w Słupsku.</p>
+                    <div class="icon-container"><i class="fas fa-file-alt"></i></div>
+                    <h3>Zgłoszenia i Warunki Uczestnictwa</h3>
+                    <p>Zgłoszenia poprzez formularz online - w terminie do <strong>15 września 2026 r.</strong></p>
+                    <ul>
+                        <li>Udział bez publikacji – bezpłatny</li>
+                        <li>Udział z publikacją - rozdział w monografii pokonferencyjnej (20 pkt): 1000 zł*</li>
+                        <li>Artykuł w czasopiśmie z nowej listy MNiSW</li>
+                        <li>Koszty dojazdu i zakwaterowania – we własnym zakresie</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Program Section -->
 <section class="section program-section" id="program">
     <div class="container">
-        <div class="section-title">
-            <h2>Program Konferencji</h2>
-        </div>
-
+        <div class="section-title"><h2>Program Konferencji</h2></div>
         <div class="schedule">
-
-            <div class="schedule-item">
-                <div class="time">09:00</div>
-                <div class="event-details">
-                    <h3>Otwarcie konferencji</h3>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">10:00 - 11:40</div>
-                <div class="event-details">
-                    <h3>Panel 1: Znaczenie infrastruktury drogowej w kształtowaniu powiązań funkcjonalnych Pomorza – diagnoza i perspektywy rozwojowe</h3>
-                    <div class="presentation-list">
-                        <div class="presentation-item">
-                            „Potencjał logistyczny subregionu w planowaniu inwestycji transportowych Subregionu Słupskiego - ujęcie systemowe” – 
-                            <span class="presenter">dr Wiesław Staniuk</span>, 
-                            <span class="presenter">dr Robert Marek</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Zadania inwestycyjne realizowane przez GDAKA Szczecin w kształtowaniu powiązań Pomorza“ – 
-                            <span class="presenter">Łukasz Lendner</span>, 
-                            <span class="organization">Dyrektor Oddziału Szczecin Generalna Dyrekcja Dróg Krajowych i Autostrad</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Zadania inwestycyjne realizowane przez GDAKA Gdańsk w ksztatowaniu powiązań Pomorza“ – 
-                            <span class="presenter">Karol Markowski</span>, 
-                            <span class="organization">Dyrektor Oddziału Gdańsk Generalna Dyrekcja Dróg Krajowych i Autostrad</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Via Pomerania – drogowa przyszłość Pomorza“ – 
-                            <span class="presenter">Mikołaj Dyląg</span>, 
-                            <span class="organization">Uniwersytet Jagielloński</span>
-                        </div>
-                        <div class="presentation-item">
-                            Dyskusja z udziałem panelistów oraz 
-                            <span class="presenter">p. Wiceprezydent Beaty Chrzanowskiej</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">11:40 - 12:00</div>
-                <div class="event-details">
-                    <h3>Przerwa kawowa</h3>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">12:00 - 13:30</div>
-                <div class="event-details">
-                    <h3>Panel 2: Diagnoza i perspektywy rozwojowe infrastruktury kolejowej Pomorza</h3>
-                    <div class="presentation-list">
-                        <div class="presentation-item">
-                            „Potencjał firm zrzeszonych w Polskiej Izbie Kolei na rynku kolejowym“ – 
-                            <span class="presenter">Adam Musiał</span>, 
-                            <span class="organization">Dyrektor Generalny Polskiej Izby Kolei</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Rozwój i integracja transportu publicznego w województwie pomorskim“ – 
-                            <span class="presenter">Krzysztof Czopek</span>, 
-                            <span class="organization">Dyrektor Departamentu Infrastruktury Urzędu Marszałkowskiego Województwa Pomorskiego</span>
-                        </div>
-                        <div class="presentation-item">
-                            Dyskusja z udziałem panelistów oraz 
-                            <span class="presenter">p. Piotra Kubickiego</span>, 
-                            <span class="organization">Cybersecurity Development Director Grupy Technitel</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">13:30 - 14:40</div>
-                <div class="event-details">
-                    <h3>Panel 3: Rola telematyki w transporcie</h3>
-                    <div class="presentation-list">
-                        <div class="presentation-item">
-                            „Znaczenie telematyki w zarządzaniu transportem zbiorowym“ – 
-                            <span class="presenter">dr Tomasz Adamkiewicz</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Od danych do decyzji: integracja systemów telematycznych w służbie mobilności miejskiej“ – 
-                            <span class="presenter">Bolesław Hilarecki</span>, 
-                            <span class="organization">Prezes Zarządu MP Technology</span>
-                        </div>
-                        <div class="presentation-item">
-                            „Transformacja cyfrowa sektora kolejowego FRMCS“ – 
-                            <span class="presenter">Piotr Kubicki</span>, 
-                            <span class="organization">Cybersecurity Development Director Grupa Technitel</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">14:45</div>
-                <div class="event-details">
-                    <h3>Zakończenie konferencji</h3>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">15:00 - 15:30</div>
-                <div class="event-details">
-                    <h3>Lunch</h3>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">15:30</div>
-                <div class="event-details">
-                    <h3>Wystąpienie / Koncert</h3>
-                </div>
-            </div>
-
-            <div class="schedule-item">
-                <div class="time">16:00</div>
-                <div class="event-details">
-                    <h3>Gala Słupskich Dni Logistyki</h3>
-                    <p>Wręczenie nagród Złoty Kompas Logistyki</p>
-                </div>
-            </div>
-
+            <div class="schedule-item"><div class="time">czwartek<br>5.11</div><div class="event-details"><h3>Uniwersytet Pomorski w Słupsku</h3><p>Aula Uniwersytecka, ul. Kozietulskiego 7, Słupsk</p></div></div>
+            <div class="schedule-item"><div class="time">—:—</div><div class="event-details"><h3>Otwarcie konferencji</h3></div></div>
+            <div class="schedule-item"><div class="time">—:—</div><div class="event-details"><h3>Część plenarna: Zarządzanie procesami logistycznymi wobec współczesnych wyzwań</h3></div></div>
+            <div class="schedule-item"><div class="time">—:—</div><div class="event-details"><h3>Panel 1: Logistyka w rozwoju regionów</h3><div class="presentation-list">
+                <div class="presentation-item">Znaczenie logistyki w rozwoju regionalnym</div>
+                <div class="presentation-item">Odporność i modyfikacja łańcuchów logistycznych wobec obecnych zagrożeń</div>
+                <div class="presentation-item">Nowoczesne technologie w logistyce – szanse czy zagrożenia?</div>
+                <div class="presentation-item">Zmiany łańcuchów logistycznych w wyniku przekształceń gospodarki światowej</div>
+                <div class="presentation-item">Technologie dual use w logistyce</div>
+                <div class="presentation-item">Logistyka jako źródło przewagi konkurencyjnej: poziom przedsiębiorstwa - regionu - kraju</div>
+                <div class="presentation-item">Nowe koncepcje w logistyce</div>
+            </div></div></div>
+            <div class="schedule-item"><div class="time">—:—</div><div class="event-details"><h3>Panel 2: Forum Bezpieczeństwa i Zdrowia Pracujących</h3><p>„Zarządzanie ryzykiem zawodowym w logistyce – droga do »zero wypadków« w magazynie i transporcie”</p><div class="presentation-list">
+                <div class="presentation-item">Koncepcja „zero wypadków” w logistyce – idea, wyzwania, możliwości wdrożenia</div>
+                <div class="presentation-item">Transport wewnętrzny w zakładzie jako obszar wysokiego ryzyka</div>
+                <div class="presentation-item">Bezpieczeństwo kierowców w logistyce transportowej</div>
+                <div class="presentation-item">Wskaźniki bezpieczeństwa w logistyce – sposoby pomiaru skuteczności działań prewencyjnych</div>
+                <div class="presentation-item">Kształtowanie bezpiecznych zachowań w magazynie</div>
+                <div class="presentation-item">Wpływ automatyzacji i robotyzacji magazynów na poziom ryzyka zawodowego</div>
+                <div class="presentation-item">Ergonomia pracy magazyniera i pracownika logistyki</div>
+            </div></div></div>
+            <div class="schedule-item"><div class="time">16:00</div><div class="event-details"><h3>Gala Słupskich Dni Logistyki</h3><p>Uroczyste wręczenie wyróżnień Kompas Logistyki 2026, koncert kameralny</p></div></div>
+            <div class="schedule-item"><div class="time">piątek<br>6.11</div><div class="event-details"><h3>Infrastruktura DUAL USE w praktyce</h3><p>Wizyta studyjna w Porcie Ustka</p></div></div>
         </div>
     </div>
 </section>
-
 <!-- Patrons Section -->
-    <section class="section" id="patrons">
+    <section class="section temporarily-hidden" id="patrons">
         <div class="container">
             <div class="section-title">
                 <h2>Patroni</h2>
@@ -945,7 +871,7 @@
     </section>
 
     <!-- Media Patrons Section -->
-    <section class="section" id="media-patrons">
+    <section class="section temporarily-hidden" id="media-patrons">
         <div class="container">
             <div class="section-title">
                 <h2>Patroni Medialni</h2>
@@ -972,42 +898,18 @@
             </div>
         </div>
     </section>
-
-
     <!-- Organizers Section -->
     <section class="section" id="organizers">
-        <div class="container">
-            <div class="section-title">
-                <h2>Organizatorzy</h2>
-            </div>
-            
+        <div class="container"><div class="section-title"><h2>Organizatorzy</h2></div>
             <div class="organizers-grid">
-                <div class="organizer-card">
-                    <div class="organizer-logo" style="background: none;">
-                        <img src="SITK RP O Słupsk.jpg" alt="SITK RP O/Słupsk" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
-                    </div>
-                    <h3>SITK RP O/Słupsk</h3>
-                </div>
-
-                <div class="organizer-card">
-                    <div class="organizer-logo" style="background: none;">
-                        <img src="Logo NOT.png" alt="FSNT NOT w Słupsku" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
-                    </div>
-                    <h3>FSNT NOT w Słupsku</h3>
-                </div>
-
-                <div class="organizer-card">
-                    <div class="organizer-logo" style="background: none;">
-                        <img src="Instytut Zarządzania UPSL.jpg" alt="Instytut Zarządzania Uniwersytetu Pomorskiego w Słupsku" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
-                    </div>
-                    <h3>Uniwersytet Pomorski w Słupsku</h3>
-                    <p>Instytut Zarządzania</p>
-                </div>
+                <div class="organizer-card"><div class="organizer-logo" style="background: none;"><img src="SITK RP O Słupsk.jpg" alt="SITK RP O/Słupsk" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"></div><h3>SITK RP</h3></div>
+                <div class="organizer-card"><div class="organizer-logo" style="background: none;"><img src="Logo NOT.png" alt="FSNT NOT w Słupsku" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"></div><h3>Naczelna Organizacja Techniczna</h3><p>Rada Regionalna w Słupsku NOT</p></div>
+                <div class="organizer-card"><div class="organizer-logo" style="background: none;"><img src="Instytut Zarządzania UPSL.jpg" alt="Instytut Zarządzania Uniwersytetu Pomorskiego w Słupsku" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"></div><h3>Uniwersytet Pomorski w Słupsku</h3><p>Instytut Zarządzania</p></div>
+                <div class="organizer-card"><div class="organizer-logo" style="background: none;"><img src="pipgovpl_logo.jpeg" alt="Państwowa Inspekcja Pracy" style="width:100px; height:100px; border-radius:50%; object-fit:cover;"></div><h3>Państwowa Inspekcja Pracy</h3><p>Oddział Okręgowy w Gdańsku</p></div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section class="section contact-section" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1055,7 +957,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>SDTTiL 2025</h3>
+                    <h3>SDTTiL 2026</h3>
                     <p>Słupskie Dni Techniki, Transportu i Logistyki</p>
                 </div>
                 
@@ -1064,8 +966,8 @@
                     <ul class="footer-links">
                         <li><a href="#about">O Konferencji</a></li>
                         <li><a href="#program">Program</a></li>
-                        <li><a href="#patrons">Patroni</a></li>
-                        <li><a href="#media-patrons">Patroni Medialni</a></li> <!-- Dodany link -->
+                        <li class="temporarily-hidden"><a href="#patrons">Patroni</a></li>
+                        <li class="temporarily-hidden"><a href="#media-patrons">Patroni Medialni</a></li> <!-- Dodany link -->
                         <li><a href="#organizers">Organizatorzy</a></li>
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
@@ -1082,7 +984,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Słupskie Dni Techniki, Transportu i Logistyki. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2026 Słupskie Dni Techniki, Transportu i Logistyki. Wszystkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
